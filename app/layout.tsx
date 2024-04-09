@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import '@mantine/core/styles.css';
+import '@mantine/charts/styles.css';
 import { MantineProvider, ColorSchemeScript } from '@mantine/core';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -19,8 +20,9 @@ export default function RootLayout({
 		<html lang='en'>
 			<head>
 				<ColorSchemeScript />
+				<link rel='shortcut icon' href='/heart.svg' />
 			</head>
-			<body>
+			<body className={`${inter.className} antialiased`}>
 				<MantineProvider>{children}</MantineProvider>
 			</body>
 		</html>
